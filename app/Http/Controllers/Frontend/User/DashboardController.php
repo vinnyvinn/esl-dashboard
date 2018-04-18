@@ -86,9 +86,14 @@ class DashboardController extends Controller
 
 
 
-       $master = DB::select( DB::raw("select companyapps.id, company, app_name, app_url, app_icon
-        from companies, applicationmodules, companyapps
-        where companies.id = '$requested_company'  and applicationmodules.id = companyapps.application_id"));
+       $master = DB::select( DB::raw("select DISTINCT companyapps.id, application_id, company, app_name, app_url, app_icon
+from companyapps
+LEFT JOIN companies ON companyapps.company_id = companies.id
+LEFT JOIN applicationmodules ON companyapps.application_id = applicationmodules.id
+where companies.id = '$requested_company'  and applicationmodules.id = companyapps.application_id
+group by companyapps.id"));
+
+
 
       // dd($master);
            

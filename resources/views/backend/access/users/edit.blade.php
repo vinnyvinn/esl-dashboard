@@ -145,29 +145,6 @@
                         </div><!--col-lg-3-->
                     </div><!--form control-->
 
-                     {{-- Associated Companies --}}
-                <div class="form-group">
-                    {{ Form::label('associated-companies', trans('Associated Companies'), ['class' => 'col-lg-2 control-label']) }}
-                    <div class="col-lg-10">
-                        <div id="available-companies" class="mt-20" style="width: 700px; height: 200px; overflow-x: hidden; overflow-y: scroll;">
-                            <div class="row">
-                                <div class="col-xs-12 get-available-companies">
-                                     @if (count($company) > 0)
-                        @foreach ($company as $company)
-                                    <label class="control control--checkbox"> 
-                                        <input type="checkbox" name="company_id" value="{{ $company->id}}" id="{{ $company->country}}"> 
-                                        <label for="{{ $company->country}}">{{ $company->company}}</label> 
-                                        <div class="control__indicator"></div> 
-                                    </label>
-                                    <br>
-                                     @endforeach
-                     @endif
-                                </div><!--col-lg-6-->
-                            </div><!--row-->
-                        </div><!--available permissions-->
-                    </div><!--col-lg-3-->
-                </div><!--form control-->
-
                 @endif
                 <div class="edit-form-btn">
                     {{ link_to_route('admin.access.user.index', trans('buttons.general.cancel'), [], ['class' => 'btn btn-danger btn-md']) }}

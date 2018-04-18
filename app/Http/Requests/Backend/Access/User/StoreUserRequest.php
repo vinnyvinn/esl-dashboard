@@ -34,7 +34,6 @@ class StoreUserRequest extends Request
             'password'        => 'required|min:6|confirmed',
             'assignees_roles' => 'required',
             'permissions'     => 'required',
-            'company_id' =>      'required',
         ];
     }
 

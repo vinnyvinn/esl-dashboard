@@ -65,12 +65,12 @@
        
 	@if (count($master) > 0)
                @foreach ($master as $companyapps)
-                        @if($companyapps->id == 4)
+                        @if($companyapps->application_id == 4)
 
-                        	 <div class="col-sm-3">
-                        	 	<a href="#" class="apps_on">
+                        	 <div class="col-sm-3 dropdown">
+                        	 	<a href="#" class="apps_on dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         	 	<img src="{{$companyapps->app_icon}}" onclick="myFunction()" class="dropbtn">
-                        	 	 <div id="myDropdown" class="dropdown-content">
+                        	 	 <div id="myDropdown" class="dropdown-content" aria-labelledby="dropdownMenu1">
 								            <a href="http://esl-transport.dnsalias.com">Transport</a>
 								            <a href="http://esl-agency.dnsalias.com">Agency</a>
 								            <a href="http://esl-forwarding.dnsalias.com">Forwarding</a>
@@ -92,11 +92,11 @@
 
           @else
 
-           <div class="col-sm-12">
+           <div class="col-md-4 col-md-offset-4 text-center">
 
             <div class="panel panel-default">
   <div class="panel-body">
-    <div class="alert alert-warning" role="alert">Sorry no Applications have been assigned to this Company</div>
+    <div class="alert alert-warning" role="alert"><strong>Sorry no Applications have been assigned to this Company<br>Check again soon</strong></div>
   </div>
 </div>
 

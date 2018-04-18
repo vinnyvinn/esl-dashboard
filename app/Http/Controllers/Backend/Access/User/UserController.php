@@ -64,7 +64,6 @@ class UserController extends Controller
     {
         return view('backend.access.users.create')->with([
             'roles' => $this->roles->getAll(),
-            'company' => $this->company->getAll(),
         ]);
     }
 

@@ -43,8 +43,10 @@
     </head>
     <body id="app-layout">
         <div id="app">
-            @include('includes.partials.logged-in-as')
+           <div class="top-navigation">
+                @include('includes.partials.logged-in-as')
             @include('frontend.includes.nav')
+           </div>
 
             <div class="container">
                 @include('includes.partials.messages')
