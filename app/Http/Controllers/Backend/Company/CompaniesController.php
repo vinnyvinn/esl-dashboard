@@ -66,10 +66,10 @@ class CompaniesController extends Controller
     public function store(StoreCompanyRequest $request)
     {
         //Input received from the request
-        $this->validate($request, ['company' => 'required', 'country_id' => 'required']);
+        $this->validate($request, ['company' => 'required']);
         $companies = new Company;
         $companies->company = $request->input('company');
-        $companies->country_id = $request->input('country_id');
+       // $companies->country_id = $request->input('country_id');
         $companies->save();
         //return with successfull message
         return redirect()->route('admin.companies.index')->withFlashSuccess(trans('alerts.backend.companies.created'));

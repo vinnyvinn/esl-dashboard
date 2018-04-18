@@ -60,6 +60,8 @@
                         </div>
 	</div>
 	<div class="row">
+
+
        
 	@if (count($master) > 0)
                @foreach ($master as $companyapps)
@@ -87,6 +89,19 @@
 				       @endif
 		
 		  @endforeach
+
+          @else
+
+           <div class="col-sm-12">
+
+            <div class="panel panel-default">
+  <div class="panel-body">
+    <div class="alert alert-warning" role="alert">Sorry no Applications have been assigned to this Company</div>
+  </div>
+</div>
+
+             
+          </div>
      @endif
                     
 

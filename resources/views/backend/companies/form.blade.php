@@ -9,24 +9,7 @@
           {{ Form::text('company', null, ['class' => 'form-control box-size', 'placeholder' => trans('Company name'), 'required' => 'required']) }} 
         </div><!--col-lg-10-->
     </div><!--form-group-->
-     <div class="form-group">
-        <!-- Create Your Field Label Here -->
-        <!-- Look Below Example for reference -->
-       {{ Form::label('name', trans('Country'), ['class' => 'col-lg-2 control-label required']) }} 
-        <div class="col-lg-5">
-            <!-- Create Your Input Field Here -->
-            <!-- Look Below Example for reference -->
-         
-          <select name="country_id" class="form-control box-size" required>
-            
-             @if (count($countries) > 0)
-                        @foreach ($countries as $countries)
-                          <option value="{{ $countries->id}}">{{ $countries->country}}</option>
-                           @endforeach
-                     @endif
-          </select>
-        </div><!--col-lg-10-->
-    </div><!--form-group-->
+    
 </div><!--box-body-->
 
 @section("after-scripts")
