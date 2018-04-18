@@ -38,11 +38,11 @@ class UserController extends Controller
      * @param UserRepository $users
      * @param RoleRepository $roles
      */
-    public function __construct(UserRepository $users, RoleRepository $roles, CompanyRepository $company)
+    public function __construct(UserRepository $users, RoleRepository $roles)
     {
         $this->users = $users;
         $this->roles = $roles;
-        $this->company = $company;
+       //$this->company = $company;
     }
 
     /**
@@ -108,7 +108,7 @@ class UserController extends Controller
             'roles'           => $this->roles->getAll(),
             'userPermissions' => $userPermissions,
             'permissions'     => $permissions,
-            'company' => $this->company->getAll(),
+            'password'        => 'required|min:6|confirmed',
         ]);
     }
 
