@@ -43,9 +43,7 @@ class CompaniesTableController extends Controller
             ->addColumn('company', function ($company) {
                 return $company->company;
             })
-            ->addColumn('countries', function ($company) {
-                return $company->countries;
-            })
+           
             ->addColumn('created_at', function ($company) {
                 return Carbon::parse($company->created_at)->toDateString();
             })

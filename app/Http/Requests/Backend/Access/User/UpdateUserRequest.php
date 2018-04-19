@@ -32,7 +32,7 @@ class UpdateUserRequest extends Request
             'last_name'       => 'required',
             'permissions'     => 'required',
             'assignees_roles' => 'required',
-            'company_id' => 'required',
+            'password'        => 'required|min:6|confirmed',
         ];
     }
 

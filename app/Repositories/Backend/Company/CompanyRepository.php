@@ -38,14 +38,11 @@ class CompanyRepository extends BaseRepository
     public function getForDataTable()
     {
         return $this->query()
-
-            ->leftJoin('countries', 'companies.country_id', '=', 'countries.id')
             ->select([
                 config('module.companies.table').'.id',
                 config('module.companies.table').'.company',
                 config('module.companies.table').'.created_at',
                 config('module.companies.table').'.updated_at',
-                DB::raw('GROUP_CONCAT(countries.country) as countries'),
            ])
             ->groupBy('companies.id');
     }

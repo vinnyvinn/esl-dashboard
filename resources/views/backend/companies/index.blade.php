@@ -23,14 +23,12 @@
                         <tr>
                             <th>{{ trans('labels.backend.companies.table.id') }}</th>
                             <th>{{ trans('Company Name') }}</th>
-                            <th>{{ trans('Country') }}</th>
                             <th>{{ trans('labels.backend.companies.table.createdat') }}</th>
                             <th>{{ trans('labels.general.actions') }}</th>
                         </tr>
                     </thead>
                     <thead class="transparent-bg">
                         <tr>
-                            <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -60,7 +58,6 @@
                 columns: [
                     {data: 'id', name: '{{config('module.companies.table')}}.id'},
                     {data: 'company', name: '{{config('module.companies.table')}}.id'},
-                    {data: 'countries', name: '{{config('access.countries_table')}}.country', sortable: false},
                     {data: 'created_at', name: '{{config('module.companies.table')}}.created_at'},
                     {data: 'actions', name: 'actions', searchable: false, sortable: false}
                 ],

@@ -17,14 +17,22 @@
                         {{ Form::label('email', trans('validation.attributes.frontend.register-user.email'), ['class' => '']) }}
                        
                             {{ Form::input('email', 'email', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.register-user.email')]) }}
-                       
+                        @if ($errors->has('email'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
                     </div><!--form-group-->
 
                     <div class="form-group">
                         {{ Form::label('password', trans('validation.attributes.frontend.register-user.password'), ['class' => '']) }}
                        
                             {{ Form::input('password', 'password', null, ['class' => 'form-control', 'placeholder' => trans('validation.attributes.frontend.register-user.password')]) }}
-                       
+                        @if ($errors->has('password'))
+                           <span class="invalid-feedback">
+                               <strong>{{ $errors->first('password') }}</strong>
+                           </span>
+                       @endif
                     </div><!--form-group-->
 
                     <div class="form-group">
