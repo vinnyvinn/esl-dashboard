@@ -11,6 +11,9 @@ Route::get('/', function () {
 });
 
 Route::resource('importUsers','ImportUsersController');
+Route::get('importfre','ImportUsersController@import_fre');
+Route::get('importsov','ImportUsersController@import_sov');
+// Route::get('importfre','ImportUsersController@importfre');
 
 Route::get('lang/{lang}', 'LanguageController@swap');
 

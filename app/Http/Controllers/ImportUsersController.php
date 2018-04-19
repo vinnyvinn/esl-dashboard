@@ -25,12 +25,36 @@ class ImportUsersController extends Controller
          }
 
     }
+    public function import_fre(){
+         $dbData=DB::connection('sqlsrvfre')->select("SELECT * FROM tblEmployee INNER JOIN tblEmployee_Contact ON tblEmployee_Contact.Emp_Id=tblEmployee.Emp_Id");
+
+            $results=$this->getUnique($dbData);
+         //   echo json_encode($results);
+         if($this->insert($results)){
+            return redirect()->back();
+         }else{
+            return redirect()->back();
+         }
+
+    }
+ public function import_sov(){
+         $dbData=DB::connection('sqlsrvsov')->select("SELECT * FROM tblEmployee INNER JOIN tblEmployee_Contact ON tblEmployee_Contact.Emp_Id=tblEmployee.Emp_Id");
+
+            $results=$this->getUnique($dbData);
+         //   echo json_encode($results);
+         if($this->insert($results)){
+            return redirect()->back();
+         }else{
+            return redirect()->back();
+         }
+
+    }
 
     public function insert($results){
              foreach ($results as $result){
             $user = new User();
             $user->email=$result->Emp_WorkEmail;
-            $user->password=bcrypt('Qwerty!1234');
+            $user->password=bcrypt('1234');
             $user->first_name=$result->Emp_Name;
             //$user->role_id='user';
             $user->save();

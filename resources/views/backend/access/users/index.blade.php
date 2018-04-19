@@ -15,9 +15,21 @@
             <h3 class="box-title">{{ trans('labels.backend.access.users.active') }}</h3>
 
             <div class="box-tools pull-right">
+                  <a href="{{url('importUsers')}}" class="btn btn-primary">import ESL(EA)</a>
                 @include('backend.access.includes.partials.user-header-buttons')
-                <a href="{{url('importUsers')}}" class="btn btn-primary">import users</a>
+              &nbsp;
+            </div><!--box-tools pull-right--> 
+             <div class="box-tools pull-right">
+                
+                <a href="{{url('importsov')}}" class="btn btn-primary">import Sovereign</a>
+                &nbsp;
+            </div><!--box-tools pull-right--> 
+             <div class="box-tools pull-right">
+               
+                <a href="{{url('importfre')}}" class="btn btn-primary">import Freightwell</a>
+                 &nbsp;
             </div><!--box-tools pull-right-->
+           
         </div><!-- /.box-header -->
 
         <div class="box-body">
