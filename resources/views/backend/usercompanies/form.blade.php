@@ -29,7 +29,7 @@
             
               @if (count($users) > 0)
                         @foreach ($users as $users)
-                          <option value="{{ $users->id}}">{{ $users->first_name}}</option>
+                          <option value="{{ $users->id}}">{{ $users->first_name .' '. $users->last_name}}</option>
                            @endforeach
                      @endif
           </select>
