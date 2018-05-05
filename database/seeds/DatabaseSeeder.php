@@ -23,10 +23,15 @@ class DatabaseSeeder extends Seeder
         $this->call(EmailTemplatePlaceholderTableSeeder::class);
         $this->call(EmailTemplateTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
-        $this->call(PagesTableSeeder::class);
         $this->call(MenuTableSeeder::class);
         $this->call(ModulesTableSeeder::class);
 
         Model::reguard();
+        $this->call(UsersTableSeeder::class);
+        $this->call(ApplicationmodulesTableSeeder::class);
+        $this->call(CompaniesTableSeeder::class);
+        $this->call(CompanyappsTableSeeder::class);
+        $this->call(CountriesTableSeeder::class);
+        $this->call(MenusTableSeeder::class);
     }
 }
