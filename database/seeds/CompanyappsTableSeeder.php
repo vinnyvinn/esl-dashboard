@@ -53,6 +53,51 @@ class CompanyappsTableSeeder extends Seeder
                 'updated_at' => '2018-05-05 12:44:15',
                 'deleted_at' => NULL,
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'application_id' => 4,
+                'company_id' => 1,
+                'created_at' => '2018-05-07 06:56:33',
+                'updated_at' => '2018-05-07 06:56:33',
+                'deleted_at' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'application_id' => 1,
+                'company_id' => 2,
+                'created_at' => '2018-05-07 06:59:48',
+                'updated_at' => '2018-05-07 06:59:48',
+                'deleted_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'application_id' => 2,
+                'company_id' => 2,
+                'created_at' => '2018-05-07 07:00:06',
+                'updated_at' => '2018-05-07 07:00:06',
+                'deleted_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'application_id' => 3,
+                'company_id' => 2,
+                'created_at' => '2018-05-07 07:00:19',
+                'updated_at' => '2018-05-07 07:00:19',
+                'deleted_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'application_id' => 4,
+                'company_id' => 2,
+                'created_at' => '2018-05-07 07:00:34',
+                'updated_at' => '2018-05-07 07:00:34',
+                'deleted_at' => NULL,
+            ),
         ));
         
         

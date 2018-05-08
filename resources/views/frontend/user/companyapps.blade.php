@@ -61,7 +61,7 @@
 	</div>
 	<div class="row">
 
-
+<div class="company-apps">
        
 	@if (count($master) > 0)
                @foreach ($master as $companyapps)
@@ -99,7 +99,7 @@
     <div class="alert alert-warning" role="alert"><strong>Sorry no Applications have been assigned to this Company<br>Check again soon</strong></div>
   </div>
 </div>
-
+</div>
              
           </div>
      @endif

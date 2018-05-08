@@ -1,121 +1,135 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-
 // Font Awesome
 @import "~font-awesome/scss/font-awesome";
-
 // Helpers
 @import "../helpers";
-
 // Global
 @import "global";
-
 // Pages
 @import "pages/dashboard";
-
 // Plugins
 @import "../plugin/toastr/toastr.scss";
 @import "../plugin/sweetalert/sweetalert.scss";
-
 #auth-layout {
-	#auth {
-	    background-image: url(/img/frontend/auth-bg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-size: cover;
-	}
+    #auth {
+        background-image: url(/img/frontend/auth-bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-size: cover;
+    }
 }
+
 #app-layout {
-    background:none;
+    background: none;
 }
 
 .login-form {
-margin-top:40px;
-h4 {
-	border-bottom:1px solid #ddd;
-	padding-bottom:15px;
-	font-weight:700;
-}
-	background: rgba(255,255,255, 0.8);
+    margin-top: 40px;
+    h4 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 15px;
+        font-weight: 700;
+    }
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px 50px;
     .logo {
-    padding:10px;
-    text-align:center;
-    img {    width: 60%;}
+        padding: 10px;
+        text-align: center;
+        img {
+            width: 60%;
+        }
     }
-}
-#app {
-    
-    .navbar {
-    background:none;
-    }
-    .logo {
-    text-align: center;
-    margin-bottom: 20px;
-    img {
-    height:100px;
-    }
-}
-.btn {
-    border:none;
-    border-radius:0;
-}
-.btn-primary {
-    background-color:blue;
-}
-}
-#company-view {
-        background-image: url(/img/frontend/containers.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding-top:140px;
-         height: 100vh;
 }
 
+#app {
+    .navbar {
+        background: none;
+    }
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+        img {
+            height: 100px;
+        }
+    }
+    .btn {
+        border: none;
+        border-radius: 0;
+    }
+    .btn-primary {
+        background-color: blue;
+    }
+}
+
+#company-view {
+    background-image: url(/img/frontend/containers.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 140px;
+    height: 100vh;
+}
 
 .apps_on {
     img {
-    max-width:100%;
+        max-width: 100%;
     }
 }
 
-    /* Dropdown Button */
+.company-apps {
+    margin-top: 70px;
+}
+
+
+/* Dropdown Button */
+
 .dropbtn {
     background-color: transparent;
     color: white;
-    padding: 8px;
+    padding: 0px;
     font-size: 0px;
     border: none;
     cursor: pointer;
 }
+
+
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
+
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: #transparent;
 }
+
+
 /* The container <div> - needed to position the dropdown content */
+
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
+
 /* Dropdown Content (Hidden by Default) */
+
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     font-size: 14px !important;
 }
+
+
 /* Links inside the dropdown */
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -123,13 +137,23 @@ h4 {
     display: block;
     font-size: 14px !important;
 }
+
+
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+
+.show {
+    display: block;
+}
 
 #top-navigation {
-        position: absolute;
+    position: absolute;
     top: 0;
     right: 0px;
     padding: 15px;
