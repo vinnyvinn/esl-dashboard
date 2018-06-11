@@ -61,7 +61,7 @@
 	</div>
 	<div class="row">
 
-
+<div class="company-apps">
        
 	@if (count($master) > 0)
                @foreach ($master as $companyapps)
@@ -75,6 +75,7 @@
 								            <a href="http://esl-agency.dnsalias.com">Agency</a>
 								            <a href="http://esl-forwarding.dnsalias.com">Forwarding</a>
 								            <a href="http://esl-logistics.dnsalias.com">Logistics</a>
+                                            <a href="http://esl.dnsalias.com:8080/preventive">Technical</a>
 							</div>
 
                         </a>
@@ -99,7 +100,7 @@
     <div class="alert alert-warning" role="alert"><strong>Sorry no Applications have been assigned to this Company<br>Check again soon</strong></div>
   </div>
 </div>
-
+</div>
              
           </div>
      @endif
