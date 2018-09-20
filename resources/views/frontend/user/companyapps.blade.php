@@ -75,7 +75,7 @@
 								            <a href="http://esl-agency.dnsalias.com">Agency</a>
 								            <a href="http://esl-forwarding.dnsalias.com">Forwarding</a>
 								            <a href="http://esl-logistics.dnsalias.com">Logistics</a>
-                                            <a href="http://esl.dnsalias.com:8080/preventive">Technical</a>
+                                            <a href="https://esl.pro-kazi.com/preventive">Technical</a>
 							</div>
 
                         </a>
