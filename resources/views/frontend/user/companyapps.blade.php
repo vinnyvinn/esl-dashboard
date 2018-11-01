@@ -79,6 +79,7 @@ display:block !important}
 								            <a href="http://esl-transport.dnsalias.com">Transport</a>
 								            <a href="http://esl-agency.dnsalias.com">Agency</a>
 								            <a href="http://esl-forwarding.dnsalias.com">Forwarding</a>
+<<<<<<< HEAD
                                             <div id="childdrop" class="dropdown">
 								            <a href="#" class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logistics <i class="fa fa-angle-down"></i>
                                             <div id="dropdownMenu2" class="dropdown-content" aria-labelledby="dropdownMenu2">
@@ -87,6 +88,10 @@ display:block !important}
                                             
                                             </div>
                                             </div>
+=======
+								            <a href="http://esl-logistics.dnsalias.com">Logistics</a>
+                                            <a href="https://esl.pro-kazi.com/preventive">Technical</a>
+>>>>>>> 424c11e8fb3628bd5eecd56a7ed8bfab0792953c
 							</div>
 
                         </a>
