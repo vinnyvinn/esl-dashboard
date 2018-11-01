@@ -12,11 +12,6 @@
     border: none;
     cursor: pointer;
 }
-#childdrop.open .dropdown-content {
-left:160%;
-top:10px;
-clear:both;
-display:block !important}
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
     background-color: #transparent;
@@ -79,9 +74,9 @@ display:block !important}
 								            <a href="http://esl-transport.dnsalias.com">Transport</a>
 								            <a href="http://esl-agency.dnsalias.com">Agency</a>
 								            <a href="http://esl-forwarding.dnsalias.com">Forwarding</a>
-                                            <div id="childdrop" class="dropdown">
+                                            <div class="dropdown">
 								            <a href="#" class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logistics <i class="fa fa-angle-down"></i>
-                                            <div id="dropdownMenu2" class="dropdown-content" aria-labelledby="dropdownMenu2">
+                                            <div  class="dropdown-content" aria-labelledby="dropdownMenu2">
                                             <a href="https://esllogistics.pro-kazi.com">Esl</a>
                                             <a href="https://sovereignlogistics.pro-kazi.com">Sovereign</a>
                                             
@@ -95,7 +90,7 @@ display:block !important}
 
                         @else
 
-				           <div class="col-sm-3"><a href="{{$companyapps->app_url}}" class="apps_on"><img src="img/frontend/{{$companyapps->app_icon}}"></a>
+				           <div class="col-sm-3"><a href="{{$companyapps->app_url}}" class="apps_on"><img src="{{$companyapps->app_icon}}"></a>
 
 				           </div>
 				       @endif
