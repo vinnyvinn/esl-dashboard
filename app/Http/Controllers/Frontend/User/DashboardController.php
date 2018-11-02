@@ -86,7 +86,7 @@ class DashboardController extends Controller
 
 
 
-       $master = DB::select( DB::raw("select DISTINCT companyapps.id, application_id, company, app_name, app_url, app_icon
+       $master = DB::select( DB::raw("select DISTINCT companyapps.id, application_id, company, app_name, app_url, app_icon, company_id
 from companyapps
 LEFT JOIN companies ON companyapps.company_id = companies.id
 LEFT JOIN applicationmodules ON companyapps.application_id = applicationmodules.id

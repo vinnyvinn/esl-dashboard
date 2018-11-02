@@ -66,20 +66,19 @@ display:block !important}
 	</div>
 	<div class="row">
 
-
        
 	@if (count($master) > 0)
                @foreach ($master as $companyapps)
                         @if($companyapps->application_id == 4)
 
-                        	 <div class="col-sm-3 dropdown">
+                        	 <div class="col-sm-3 margins dropdown" style="margin-bottom: 20px;">
                         	 	<a href="#" class="apps_on dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         	 	<img src="{{$companyapps->app_icon}}" onclick="myFunction()" class="dropbtn">
                         	 	 <div id="myDropdown" class="dropdown-content" aria-labelledby="dropdownMenu1">
 								            <a href="http://esl-transport.dnsalias.com">Transport</a>
 								            <a href="http://esl-agency.dnsalias.com">Agency</a>
 								            <a href="http://esl-forwarding.dnsalias.com">Forwarding</a>
-<<<<<<< HEAD
+
                                             <div id="childdrop" class="dropdown">
 								            <a href="#" class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Logistics <i class="fa fa-angle-down"></i>
                                             <div id="dropdownMenu2" class="dropdown-content" aria-labelledby="dropdownMenu2">
@@ -88,19 +87,39 @@ display:block !important}
                                             
                                             </div>
                                             </div>
-=======
-								            <a href="http://esl-logistics.dnsalias.com">Logistics</a>
+
                                             <a href="https://esl.pro-kazi.com/preventive">Technical</a>
->>>>>>> 424c11e8fb3628bd5eecd56a7ed8bfab0792953c
+
 							</div>
 
                         </a>
 
 				           </div>
 
+                        @elseif($companyapps->application_id == 7)
+
+                             <div class="col-sm-3 margins dropdown" style="margin-bottom: 20px;">
+                                
+                        <div class="dropdown">
+  <a href="#" class="dropdown-toggle" id="imprest" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img src="img/frontend/{{$companyapps->app_icon}}">
+     </a>
+  <ul class="dropdown-menu" aria-labelledby="imprest">
+    <li><a href="http://esl-imprest.pro-kazi.com">Esl Imprest</a></li>
+    <li><a href="http://freightwell-imprest.pro-kazi.com">Freightwell Imprest</a></li>
+    <li><a href="http://sovereign-imprest.pro-kazi.com">Sovereign Imprest</a></li>
+   
+  </ul>
+</div>
+
+                           </div>
+
                         @else
 
-				           <div class="col-sm-3"><a href="{{$companyapps->app_url}}" class="apps_on"><img src="img/frontend/{{$companyapps->app_icon}}"></a>
+
+				           <div class="col-sm-3 margins" style="
+    margin-bottom: 20px;
+"><a href="{{$companyapps->app_url}}" class="apps_on"><img src="img/frontend/{{$companyapps->app_icon}}"></a>
 
 				           </div>
 				       @endif

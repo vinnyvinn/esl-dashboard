@@ -19,6 +19,7 @@
                                 <img src="/img/frontend/logo.png">
                             </a>
                         </div>
+                        
                         <form class="" action="{{ url('/companyapps')}}" method="post">
                              {{csrf_field()}}
                             <div class="form-group">
