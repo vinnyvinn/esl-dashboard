@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-    {{ Form::model($user, ['route' => ['admin.access.user.update', $user], 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'PATCH']) }}
+    {{ Form::model($user, ['route' => ['admin.access.user.update', $user], 'class' => 'form-horizontal manage-users', 'role' => 'form', 'method' => 'PATCH']) }}
 
         <div class="box box-info">
             <div class="box-header with-border">
@@ -54,7 +54,9 @@
                     {{ Form::label('password', trans('validation.attributes.backend.access.users.password'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
-                        {{ Form::password('password', ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.users.password'), 'required' => 'required']) }}
+                        {{ Form::password('password', ['class' => 'form-control box-size password', 'placeholder' => trans('validation.attributes.backend.access.users.password'), 'required' => 'required']) }}
+                    <br>
+                        <span class="pass_placeholder"></span>
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
@@ -64,6 +66,8 @@
 
                     <div class="col-lg-10">
                         {{ Form::password('password_confirmation', ['class' => 'form-control box-size', 'placeholder' => trans('validation.attributes.backend.access.users.password_confirmation'), 'required' => 'required']) }}
+                        <br>
+                        <span id="pass_match"></span>
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
@@ -166,7 +170,7 @@
                 @endif
                 <div class="edit-form-btn">
                     {{ link_to_route('admin.access.user.index', trans('buttons.general.cancel'), [], ['class' => 'btn btn-danger btn-md']) }}
-                    {{ Form::submit(trans('buttons.general.crud.update'), ['class' => 'btn btn-primary btn-md']) }}
+                    {{ Form::submit(trans('buttons.general.crud.update'), ['class' => 'btn btn-primary btn-md btnClick']) }}
                     <div class="clearfix"></div>
                 </div>
             </div><!-- /.box-body -->
@@ -183,6 +187,69 @@
 
 @section('after-scripts')
     <script type="text/javascript">
+        $(function () {
+            var validated;
+            $('.password').on('keyup', function () {
+
+                $(this).each(function () {
+                    validated = true;
+                    if (this.value.length < 8)
+                        validated = false;
+                    if (!/\d/.test(this.value))
+                        validated = false;
+                    if (!/[a-z]/.test(this.value))
+                        validated = false;
+                    if (!/[A-Z]/.test(this.value))
+                        validated = false;
+                    if (/[^0-9a-zA-Z]/.test(this.value))
+                        validated = false;
+                    if (!validated) {
+                        $('.pass_placeholder').css('color', 'red').text('Password must contain atleast 1 digit,1 lowercase character,1 uppercase character and must not be less than 8 characters.');
+
+                    } else {
+                        $('.pass_placeholder').css('color', 'green').text('Password strength passed');
+                    }
+
+
+                });
+            });
+
+
+            $('.manage-users').on('submit', function (e) {
+
+                if ($('#password').val() !== $('#password-confirm').val()){
+                    $("#pass_match").css('color','red').text('Password fields do not match');
+                    return true;
+                }
+                else{
+                    $("#pass_match").text('');
+                }
+                e.preventDefault();
+
+                $('.btnClick').attr('disabled', true).val('Please wait');
+                if (validated) {
+                    $.ajax({
+                        url: $(this).attr('action'),
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        success: function (response) {
+                            console.log(response);
+                            window.location.href = '{{url('manage-users')}}';
+                        }
+                    });
+                }
+                else{
+                    $('.pass_placeholder').css('color', 'red').text('Password must contain atleast 1 digit,1 lowercase character,1 uppercase character and must not be less than 8 characters.');
+                    $('.btnClick').attr('disabled', false).val('Save');
+                    return true;
+                }
+
+            });
+
+
+        });
+
+
         Backend.Utils.documentReady(function(){
             csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             Backend.Users.selectors.getPremissionURL = "{{ route('admin.get.permission') }}";

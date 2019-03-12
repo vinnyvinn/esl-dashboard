@@ -30,9 +30,10 @@ class DashboardController extends Controller
     public function index(DashboardViewRequest $request, Company $company)
     {
 
+
     	$id = $this->getId();
         $company = Usercompany::find($id);
-        
+
 
         $logged = \Auth::user()->id;
         $companies = DB::table('usercompanies')
@@ -41,7 +42,7 @@ class DashboardController extends Controller
                     'users.first_name as user'
                 )
             ->leftJoin('companies', 'usercompanies.company_id', '=', 'companies.id')
-             
+
             ->leftJoin('users', 'usercompanies.user_id', '=', 'users.id')
 
 //          ->whereNotNull('pallet_id', 'AND')
@@ -49,12 +50,12 @@ class DashboardController extends Controller
             // ->where('flagged', '=', 0, 'AND')
 
             ->groupBy('usercompanies.id')
-            ->get();     
-           
+            ->get();
+
 
         return view('frontend.user.dashboard', (compact('companies', 'company')));
-       
-        
+
+
     }
      public function getId()
     {
@@ -65,7 +66,7 @@ class DashboardController extends Controller
         $company = Company::find($id);
         $usercompany = DB::table('usercompanies')->where('company_id', '=', $id)->get();
         return view('frontend.user.company', compact('usercompany'))->withCompany($usercompany, $company);
-        
+
     }
 
     public function companyapps()
@@ -73,16 +74,16 @@ class DashboardController extends Controller
     {
       //  $id = $this->getId();
         $requested_company = Input::get('company_id');
-      
+
        // $apps = Applicationmodule::find()->app_name;
-       
+
 
         // $master = DB::table('companyapps', 'applicationmodules', 'company')
         // ->select('app_name')
         // ->where('companyapps.company_id', '=', $requested_company)
         // ->where ('applicationmodules.id = companyapps.application_id')
         //  ->groupBy('companyapps.id')
-        //     ->get(); 
+        //     ->get();
 
 
 
@@ -96,7 +97,7 @@ group by companyapps.id"));
 
 
       // dd($master);
-           
+
             return view('frontend.user.companyapps', compact('master'));
     }
 
