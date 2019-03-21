@@ -94,7 +94,7 @@ display:block !important}
                                 <a href="#" class="apps_on dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="{{$companyapps->app_icon}}" onclick="myFunction()" class="dropbtn">
                                  <div id="myDropdown" class="dropdown-content" aria-labelledby="dropdownMenu1">
-                                            <a href="http://esl-transport.pro-kazi.com">Transport</a>
+                                            
                                             <a href="http://esl-agency.pro-kazi.com">Agency</a>
                                           
                                           <div id="childdrop3" class="dropdown">
