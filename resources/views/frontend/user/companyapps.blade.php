@@ -201,10 +201,10 @@ display:block !important}
     <div class="container">
  
   <!-- Modal -->
+  
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
-    <form action="https://esl.pro-kazi.com/system_tickets/tickets_posted" method="POST" enctype="multipart/form-data">
+        <form action="https://esl.pro-kazi.com/system_tickets/tickets_posted" method="POST" enctype="multipart/form-data">
       {{ csrf_field() }}
       <!-- Modal content-->
       <div class="modal-content">
