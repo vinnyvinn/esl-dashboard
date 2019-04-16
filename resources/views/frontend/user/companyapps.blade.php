@@ -159,7 +159,10 @@ display:block !important}
 </div>
 
                            </div>
-
+                           @elseif($companyapps->application_id == 6)
+                          <div class="col-sm-3 margins" style="margin-bottom: 20px;
+"><a href="#" class="apps_on"><img src="img/frontend/{{$companyapps->app_icon}}"  data-toggle="modal" data-target="#myModal"></a>
+</div>
                         @else
 
 
@@ -194,6 +197,68 @@ display:block !important}
 
 </div>
     </div>
+
+    <div class="container">
+ 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+    <form action="https://esl.pro-kazi.com/system_tickets/tickets_posted" method="POST" enctype="multipart/form-data">
+      {{ csrf_field() }}
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Ticket</h4>
+        </div>
+        <div class="modal-body">
+         <input type="hidden" name="ticket_type_id" value="system">
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" class="form-control" name="subject" id="subject" required>
+            </div>
+          
+          <div class="form-group">
+              <label for="location">Location</label>
+              <select name="location" id="location" class="form-control" required>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kampala">Kampala</option>
+              </select>
+
+            </div>
+            <div class="form-group">
+              <label for="user">Reference User</label>
+              <select name="user" class="form-control" required>
+                @foreach($users as $user)
+                <option value="{{$user->first_name.' '.$user->last_name}}">{{$user->first_name .' '.$user->last_name}}</option>
+
+                @endforeach
+              </select>
+
+            </div>
+            <input type="hidden" name="created_by" value="{{ Auth::user()->first_name .' '.Auth::user()->last_name }}">
+            <input type="hidden" name="email" value="{{ Auth::user()->email }}">
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea name="description" id="description" cols="10" rows="5" class="form-control" required></textarea>
+            
+          </div>
+          <div class="form-group">
+            <label for="file">Upload File</label>
+            <input type="file" name="image">
+          </div>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-question"> Submit</i></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </form>
+  </div>
+  
+</div>
 </section>
 @endsection
 

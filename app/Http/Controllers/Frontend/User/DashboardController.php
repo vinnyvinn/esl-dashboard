@@ -98,7 +98,7 @@ group by companyapps.id"));
 
       // dd($master);
 
-            return view('frontend.user.companyapps', compact('master'));
+            return view('frontend.user.companyapps', compact('master'))->with('users',User::all());
     }
 
 }

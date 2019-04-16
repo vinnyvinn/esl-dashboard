@@ -63,6 +63,11 @@
         {{ Html::script('js/frontend/frontend.js') }}
         {!! Html::script('js/select2/select2.js') !!}
 
+<script>
+  $(function(){
+   $('#all_users').select2();
+  })
+</script>
         <script type="text/javascript">
             if("{{Route::currentRouteName()}}" !== "frontend.user.account")
             {
