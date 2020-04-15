@@ -12,18 +12,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
         \DB::table('users')->delete();
-        
         \DB::table('users')->insert(array (
             0 => 
-            array (
+             array (
                 'id' => 1,
                 'first_name' => 'Viral',
                 'last_name' => 'Solani',
                 'email' => 'admin@admin.com',
-                'password' => '$2y$10$3TghjwF/ucHQ2PMohU9xGuXrhDsAuWPibZSr.BpoEwRSerI3PuoUO',
+                'password' => bcrypt('Qwerty123!'),
                 'status' => 1,
                 'confirmation_code' => '606435e4cce265ad02a7bd72a710a296',
                 'confirmed' => 1,
@@ -41,7 +39,7 @@ class UsersTableSeeder extends Seeder
                 'first_name' => 'Vipul',
                 'last_name' => 'Basapati',
                 'email' => 'executive@executive.com',
-                'password' => '$2y$10$rTOEmx99NC5CX/wOq7w3kuaBYyVF1v3NyMaETt1xNVi2sp4GZd9/e',
+                'password' => bcrypt('Qwerty123!'),
                 'status' => 1,
                 'confirmation_code' => 'e5a45ccd64bf0e11096e6e89a4c29d96',
                 'confirmed' => 1,
@@ -59,7 +57,7 @@ class UsersTableSeeder extends Seeder
                 'first_name' => 'User',
                 'last_name' => 'Test',
                 'email' => 'user@user.com',
-                'password' => '$2y$10$ltyTekzKetaEx42IEONz.eyxPrClg6254KDkdDegWsszzVVZNWeka',
+                'password' => bcrypt('Qwerty123!'),
                 'status' => 1,
                 'confirmation_code' => '1fb164f7af267feb3a9785d644dd815d',
                 'confirmed' => 1,
