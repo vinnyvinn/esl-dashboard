@@ -30,11 +30,8 @@ class DashboardController extends Controller
     public function index(DashboardViewRequest $request, Company $company)
     {
 
-
     	$id = $this->getId();
         $company = Usercompany::find($id);
-
-
         $logged = \Auth::user()->id;
         $companies = DB::table('usercompanies')
             ->select(
@@ -93,12 +90,8 @@ LEFT JOIN companies ON companyapps.company_id = companies.id
 LEFT JOIN applicationmodules ON companyapps.application_id = applicationmodules.id
 where companies.id = '$requested_company'  and applicationmodules.id = companyapps.application_id
 group by companyapps.id"));
-
-
-
-      // dd($master);
-
-            return view('frontend.user.companyapps', compact('master'))->with('users',User::all());
+ //dd($master);
+ return view('frontend.user.companyapps', compact('master'))->with('users',User::all());
     }
 
 }

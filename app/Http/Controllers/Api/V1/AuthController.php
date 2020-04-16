@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Access\User\User;
 use Illuminate\Http\Request;
-use JWTAuth;
+
 use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Validator;
 
 class AuthController extends APIController

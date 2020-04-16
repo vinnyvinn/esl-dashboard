@@ -6,6 +6,20 @@
  */
 
 require('../bootstrap');
+window.Vue = require('vue');
+
+import VueToastr from 'vue-toastr';
+Vue.use(VueToastr);
+window.axios = require('axios');
+axios.defaults.baseURL ='http://localhost:8000/api/';
+window.base_url = axios.defaults.baseURL;
+
+import User from './../helpers/User';
+window.User = User;
+window.eventBus = new Vue();
+
+import Exception from "./../helpers/Exception";
+window.Exception = Exception;
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -14,7 +28,7 @@ require('../bootstrap');
  */
 
 Vue.component('example', require('../components/frontend/Example.vue'));
-
+Vue.component('app-login', require('../components/frontend/auth/AppLogin.vue'));
 const app = new Vue({
     el: '#app'
 });

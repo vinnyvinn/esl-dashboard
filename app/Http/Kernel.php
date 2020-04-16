@@ -3,8 +3,8 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use Tymon\JWTAuth\Middleware\GetUserFromToken;
-use Tymon\JWTAuth\Middleware\RefreshToken;
+//use Tymon\JWTAuth\Middleware\GetUserFromToken;
+//use Tymon\JWTAuth\Middleware\RefreshToken;
 
 /**
  * Class Kernel.
@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        \Illuminate\Session\Middleware\StartSession::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \Spatie\Cors\Cors::class,
@@ -76,7 +77,7 @@ class Kernel extends HttpKernel
          */
         'access.routeNeedsRole'       => \App\Http\Middleware\RouteNeedsRole::class,
         'access.routeNeedsPermission' => \App\Http\Middleware\RouteNeedsPermission::class,
-        'jwt.auth'                    => GetUserFromToken::class,
-        'jwt.refresh'                 => RefreshToken::class,
+//        'jwt.auth'                    => GetUserFromToken::class,
+//        'jwt.refresh'                 => RefreshToken::class,
     ];
 }

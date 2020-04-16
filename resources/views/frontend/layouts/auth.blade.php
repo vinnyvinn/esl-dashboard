@@ -41,14 +41,14 @@
         ?>
     </head>
     <body id="auth-layout">
+    <div id="app">
         <div id="auth">
-           
-
             <div class="container">
                 @include('includes.partials.messages')
                 @yield('content')
             </div><!-- container -->
-        </div><!--#app-->
+        </div>
+    </div><!--#app-->
 
         <!-- Scripts -->
         @yield('before-scripts')

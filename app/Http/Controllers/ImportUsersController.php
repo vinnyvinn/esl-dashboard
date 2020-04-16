@@ -14,6 +14,7 @@ class ImportUsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+        dd('abcdefg');
          $dbData=DB::connection('sqlsrvkenya')->select("SELECT * FROM tblEmployee INNER JOIN tblEmployee_Contact ON tblEmployee_Contact.Emp_Id=tblEmployee.Emp_Id");
 
             $results=$this->getUnique($dbData);

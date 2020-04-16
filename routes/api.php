@@ -57,3 +57,16 @@ Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1', 'as' => 'v1.'], functio
         Route::resource('blogs', 'BlogsController', ['except' => ['create', 'edit']]);
     });
 });
+
+    Route::group([
+        'middleware' => 'api',
+    ], function () {
+        Route::post('login', 'AuthController@login');
+        Route::post('logout', 'AuthController@logout');
+        Route::post('refresh', 'AuthController@refresh');
+        Route::post('me', 'AuthController@me');
+        Route::post('sign-in', 'LoginsController@authenticates');
+        Route::get('s-in', 'LoginsController@signIN');
+    });
+
+

@@ -36,28 +36,19 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'email',
-        'status',
-        'confirmation_code',
-        'confirmed',
-        'created_by',
-        'updated_by',
-    ];
-
+     protected $guarded = [];
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+
 
     /**
      * @var array
      */
     protected $dates = ['deleted_at'];
+     protected $primaryKey = 'id';
 
     /**
      * @param array $attributes
@@ -85,6 +76,7 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getJWTCustomClaims()
     {
+       // return [];
         return [
             'id'              => $this->id,
             'first_name'      => $this->first_name,

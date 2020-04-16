@@ -12,6 +12,9 @@ use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 
 class Handler extends ExceptionHandler
 {
@@ -40,6 +43,13 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if ($exception instanceof TokenInvalidException){
+            return response()->json(['error' => 'Invalid Token'],400);
+        } elseif ($exception instanceof TokenExpiredException){
+            return response()->json(['error' => 'Token is Expired'],400);
+        } elseif ($exception instanceof JWTException){
+            return response()->json(['error' => 'There is problem with your token'],400);
+        }
         parent::report($exception);
     }
 
