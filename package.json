@@ -19,7 +19,7 @@
     "vue": "^2.5.7",
     "webpack-rtl-plugin": "^1.5.0",
     "vue-toastr": "^2.1.2",
-    "axios": "^0.18"
+    "axios": "^0.21"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
