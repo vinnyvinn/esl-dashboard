@@ -33,6 +33,6 @@
     "pluralize": "^7.0.0",
     "popper.js": "^1.14.3",
     "select2": "^4.0.4",
-    "tinymce": "^4.5.8"
+    "tinymce": "^5.10.0"
   }
 }
